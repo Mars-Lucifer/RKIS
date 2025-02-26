@@ -1,175 +1,158 @@
-function task1() {
-  const block = document.getElementById("task1");
-  if (true) {
-    block.children[1].style.display = "block";
-  }
-  if (false) {
-    block.children[2].style.display = "block";
-  }
+// Задание 1
+function hello1(block) {
+    block.children[1].innerText = "Привет, JavaScript!";
 }
 
-function task2(m, block) {
-  console.log(m);
-  let n;
-  if (Number(m) > 50) {
-    n = "Big m";
-  } else {
-    n = "Small m";
-  }
-  block.children[2].innerText = n;
-}
-
-function task3(block) {
-  let n = 0;
-  let i = 2;
-  while (i < 9) {
-    n++;
-    i++;
-  }
-
-  block.children[1].innerText = `Ответ: ${n}`;
-}
-
-function task4(block) {
-  let start = 45;
-  let end = 67;
-  while (start < end) {
-    start++;
-    console.log(start);
-    block.children[1].innerText = block.children[1].innerText + " " + start;
-  }
-}
-
-function task5(block) {
-  let start = 45;
-  let end = 670;
-  while (start < end) {
-    start++;
-    if (start % 10 == 0) {
-      console.log(start);
-      block.children[1].innerText = block.children[1].innerText + " " + start;
+// Задание 2
+function hello2(name, block) {
+    if (name) {
+        block.children[2].innerText = `Привет, ${name}!`;
+    } else {
+        block.children[2].innerText = "Привет, гость!";
     }
-  }
 }
 
-function task6(block) {
-  task4(block.children[1]);
-  task5(block.children[2]);
+function task2() {
+    const block = document.getElementById("task2");
+    const name = block.children[1].value;
+    hello2(name, block);
 }
 
-function task7(block, value) {
-  const textEl = block.children[2];
-  let text;
-  switch (value) {
-    case 0:
-      text = "Ноль";
-      break;
-    case 1:
-      text = "Один";
-      break;
-    case 2:
-      text = "Два";
-      break;
-    case 3:
-      text = "Три";
-      break;
-    case 4:
-      text = "Четыре";
-      break;
-    case 5:
-      text = "Пять";
-      break;
-    case 6:
-      text = "Шесть";
-      break;
-    case 7:
-      text = "Семь";
-      break;
-    case 8:
-      text = "Восемь";
-      break;
-    case 9:
-      text = "Девять";
-      break;
-    default:
-      text = "Ты что такое ввел";
-  }
-  textEl.innerText = text;
+// Задание 3
+function mul(m, n) {
+    return m * n;
 }
 
-function task8(block, url) {
-  for (let i = 0; i <= 10; i++) {
-    // Не прикольный вариант
-    // document.write(`<img src="${url}" alt="">`);
+function task3() {
+    const block = document.getElementById("task3");
+    const m = Number(block.children[1].value) || 0;
+    const n = Number(block.children[2].value) || 0;
+    const result = mul(m, n);
+    block.children[4].innerText = `Произведение: ${result}`;
+}
 
-    // Прикольный
-    let img = document.createElement("img");
-    img.src = url;
-    img.alt = "Alt";
-    img.style.borderRadius = "24px";
-    block.children[1].append(img);
-  }
+// Задание 4
+function repeat(str, n) {
+    return str.repeat(n);
+}
+
+function task4() {
+    const block = document.getElementById("task4");
+    const str = block.children[1].value || "";
+    const n = Number(block.children[2].value) || 2;
+    const result = repeat(str, n);
+    block.children[4].innerText = `Результат: ${result}`;
+}
+
+// Задание 5
+function rgb(r, g, b) {
+    return `rbg(${r},${g},${b})`;
+}
+
+function task5() {
+    const block = document.getElementById("task5");
+    const r = Number(block.children[1].value) || 0;
+    const g = Number(block.children[2].value) || 0;
+    const b = Number(block.children[3].value) || 0;
+    const result = rgb(r, g, b);
+    block.children[5].innerText = `RGB: ${result}`;
+}
+
+// Задание 6
+function avg(...args) {
+    if (args.length === 0) return 0;
+    const sum = args.reduce((acc, val) => acc + val, 0);
+    return sum / args.length;
+}
+
+function task6() {
+    const block = document.getElementById("task6");
+    const num1 = Number(block.children[1].value) || 0;
+    const num2 = Number(block.children[2].value) || 0;
+    const num3 = Number(block.children[3].value) || 0;
+    const result = avg(num1, num2, num3);
+    block.children[5].innerText = `Среднее: ${result}`;
+}
+
+// Задание 7
+function m(a, b) {
+    return mul(a, b);
+}
+
+function task7() {
+    const block = document.getElementById("task7");
+    const a = Number(block.children[1].value) || 0;
+    const b = Number(block.children[2].value) || 0;
+    const result = m(a, b);
+    block.children[4].innerText = `Результат: ${result}`;
+}
+
+// Задание 8
+function operation(m, n, o) {
+    return o(m, n);
+}
+
+function task8() {
+    const block = document.getElementById("task8");
+    const m = Number(block.children[1].value) || 0;
+    const n = Number(block.children[2].value) || 0;
+    const operationType = block.children[3].value;
+    let op;
+    switch (operationType) {
+        case "add":
+            op = (a, b) => a + b;
+            break;
+        case "subtract":
+            op = (a, b) => a - b;
+            break;
+        case "multiply":
+            op = (a, b) => a * b;
+            break;
+        case "divide":
+            op = (a, b) => (b !== 0 ? a / b : "Деление на ноль");
+            break;
+    }
+    const result = operation(m, n, op);
+    block.children[5].innerText = `Результат: ${result}`;
+}
+
+// Задание 9
+function addN(n) {
+    return function (x) {
+        return x + n;
+    };
 }
 
 function task9() {
-  const block = document.getElementById("task9");
-  const size = Number(block.children[1].value);
-  const unit = block.children[2].value;
-  let bytes;
-
-  switch (unit) {
-    case "Кб":
-      bytes = size * 1024;
-      break;
-    case "Мб":
-      bytes = size * 1024 ** 2;
-      break;
-    case "Гб":
-      bytes = size * 1024 ** 3;
-      break;
-    default:
-      bytes = "Ошибка: неизвестная единица измерения";
-  }
-
-  block.children[4].textContent = bytes;
+    const block = document.getElementById("task9");
+    const n = Number(block.children[1].value) || 0;
+    const addFunc = addN(n);
+    const result = addFunc(5);
+    block.children[3].innerText = `Резльтат сложения с 5: ${result}`;
 }
 
+// Задание 10
+function words(n) {
+    let word;
+    if (n % 10 === 1 && n % 100 !== 11) {
+        word = "товар";
+    } else if ([2, 3, 4].includes(n % 10) && ![12, 13, 14].includes(n % 100)) {
+        word = "товара";
+    } else {
+        word = "товаров";
+    }
+    return `${n} ${word}`;
+}
+
+function task10() {
+    const block = document.getElementById("task10");
+    const n = Number(block.children[1].value) || 0;
+    const result = words(n);
+    block.children[3].innerText = result;
+}
+
+// Вызов функции для задания 1 при загрузке страницы
 document.addEventListener("DOMContentLoaded", () => {
-  // Task 1
-  task1();
-
-  //   Task 2
-  const block2 = document.getElementById("task2");
-  block2.children[1].addEventListener("input", (event) => {
-    task2(Number(block2.children[1].value), block2);
-  });
-
-  //   Task 3
-  const block3 = document.getElementById("task3");
-  task3(block3);
-
-  //   Task 4
-  const block4 = document.getElementById("task4");
-  task4(block4);
-
-  //   Task 5
-  const block5 = document.getElementById("task5");
-  task5(block5);
-
-  //   Task 6
-  const block6 = document.getElementById("task6");
-  task6(block6);
-
-  //   Task 7
-  const block7 = document.getElementById("task7");
-  block7.children[1].addEventListener("input", (event) => {
-    task7(block7, Number(block7.children[1].value));
-  });
-
-  //   Task8
-  const block8 = document.getElementById("task8");
-  task8(
-    block8,
-    "https://cloud.appwrite.io/v1/storage/buckets/67a09f38001759efc274/files/67b0aabc00389c7cb0da/view?project=678e9fec0037ef69e479"
-  );
+    const block1 = document.getElementById("task1");
+    hello1(block1);
 });
