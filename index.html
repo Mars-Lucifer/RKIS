@@ -1,77 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Праткическая 2</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div>
-      <h1>Практическая работа 2</h1>
-      <h2 style="color: gray">ИСк-221; Рыбалко Н.С</h2>
-    </div>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Практическая работа</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div>
+            <h1>Практическая работа</h1>
+            <h2 style="color: gray">ИСк-221; Рыбалко Н.С</h2>
+        </div>
 
-    <div class="task" id="task1">
-      <h3>Задание 1</h3>
-      <p style="display: none">
-        Сработало <span style="color: green">true</span>
-      </p>
-      <p style="display: none">Сработало false</p>
-    </div>
+        <!-- Задание 1 -->
+        <div class="task" id="task1">
+            <h3>Задание 1</h3>
+            <p></p>
+        </div>
 
-    <div class="task" id="task2">
-      <h3>Задание 2</h3>
-      <input type="number" placeholder="m" />
-      <p>Введите m</p>
-    </div>
+        <!-- Задание 2 -->
+        <div class="task" id="task2">
+            <h3>Задание 2</h3>
+            <input type="text" placeholder="Введите имя" />
+            <button onclick="task2()">Приветствовать</button>
+            <p></p>
+        </div>
 
-    <div class="task" id="task3">
-      <h3>Задание 3</h3>
-      <p>ответ: n</p>
-    </div>
+        <!-- Задание 3 -->
+        <div class="task" id="task3">
+            <h3>Задание 3</h3>
+            <input type="number" placeholder="m" />
+            <input type="number" placeholder="n" />
+            <button onclick="task3()">Умножить</button>
+            <p></p>
+        </div>
 
-    <div class="task" id="task4">
-      <h3>Задание 4</h3>
-      <p></p>
-    </div>
+        <!-- Задание 4 -->
+        <div class="task" id="task4">
+            <h3>Задание 4</h3>
+            <input type="text" placeholder="Строка" />
+            <input type="number" placeholder="n" />
+            <button onclick="task4()">Повторить</button>
+            <p></p>
+        </div>
 
-    <div class="task" id="task5">
-      <h3>Задание 5</h3>
-      <p></p>
-    </div>
+        <!-- Задание 5 -->
+        <div class="task" id="task5">
+            <h3>Задание 5</h3>
+            <input type="number" placeholder="R" />
+            <input type="number" placeholder="G" />
+            <input type="number" placeholder="B" />
+            <button onclick="task5()">Получить RGB</button>
+            <p></p>
+        </div>
 
-    <div class="task" id="task6">
-      <h3>Задание 6</h3>
-      <div>
-        <div></div>
-        <p></p>
-      </div>
-      <div>
-        <div></div>
-        <p></p>
-      </div>
-    </div>
+        <!-- Задание 6 -->
+        <div class="task" id="task6">
+            <h3>Задание 6</h3>
+            <input type="number" placeholder="Число 1" />
+            <input type="number" placeholder="Число 2" />
+            <input type="number" placeholder="Число 3" />
+            <button onclick="task6()">Среднее</button>
+            <p></p>
+        </div>
 
-    <div class="task" id="task7">
-      <h3>Задание 7</h3>
-      <input type="number" placeholder="Число" />
-      <p>Введите число 0-9</p>
-    </div>
+        <!-- Задание 7 -->
+        <div class="task" id="task7">
+            <h3>Задание 7</h3>
+            <input type="number" placeholder="m" />
+            <input type="number" placeholder="n" />
+            <button onclick="task7()">Умножить через оболочку</button>
+            <p></p>
+        </div>
 
-    <div class="task" id="task8">
-      <h3>Задание 8</h3>
-      <div class="grid"></div>
-    </div>
+        <!-- Задание 8 -->
+        <div class="task" id="task8">
+            <h3>Задание 8</h3>
+            <input type="number" placeholder="m" />
+            <input type="number" placeholder="n" />
+            <select id="operationSelect">
+                <option value="add">Сложение</option>
+                <option value="subtract">Вычитание</option>
+                <option value="multiply">Умножение</option>
+                <option value="divide">Деление</option>
+            </select>
+            <button onclick="task8()">Выполнить</button>
+            <p></p>
+        </div>
 
-    <div class="task" id="task9">
-      <h3>Задание 9</h3>
-      <input type="number" placeholder="Size" />
-      <input type="text" placeholder="Unit (Гб/Мб/Кб)" />
-      <button onclick="task9()">Рассчитать</button>
-      <p>Здесь будет ответ</p>
-    </div>
+        <!-- Задание 9 -->
+        <div class="task" id="task9">
+            <h3>Задание 9</h3>
+            <input type="number" placeholder="n" />
+            <button onclick="task9()">Сложить с 5</button>
+            <p></p>
+        </div>
 
-    <script src="index.js"></script>
-  </body>
+        <!-- Задание 10 -->
+        <div class="task" id="task10">
+            <h3>Задание 10</h3>
+            <input type="number" placeholder="n" />
+            <button onclick="task10()">Получить форму слова</button>
+            <p></p>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
 </html>
